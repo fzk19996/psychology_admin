@@ -1,5 +1,6 @@
 <template>
 <div class="widthHeight100">
+   <head-top></head-top>
   <el-container>
   <el-main>
     <el-row class="row-padding" type="flex" justify="space-between" align="middle" >
@@ -36,6 +37,7 @@
   import { mapActions, mapState } from 'vuex';
   import SetAnswer from '../components/SetAnswer';
   import QuestionList from '../components/QuestionList';
+  import headTop from "../components/headTop";
 
   export default {
     name: 'SetQuestion',
@@ -44,6 +46,7 @@
         title: ''
       }
     },
+    
     methods: {
       ...mapActions(['setQuestionnaireTitle', 'saveQuestionnaireTemplate', 'clearTemplate', 'getQuestionnaireTemplateById']),
       init() {
@@ -107,7 +110,9 @@
     },
     components: {
       SetAnswer,
-      QuestionList
+      QuestionList,
+      headTop,
+    
     },
     computed: {
       ...mapState({

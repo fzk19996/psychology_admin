@@ -7,6 +7,7 @@
       </el-tab-pane>
       <el-tab-pane label="模板管理" name="second">
         <set-questionnaire-template></set-questionnaire-template>
+        <set-advice-template></set-advice-template>
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -17,6 +18,7 @@
   import SetQuestionnaire from '../components/SetQuestionnaire';
   import SetQuestionnaireTemplate from '../components/SetQuestionnaireTemplate';
   import headTop from '@/components/headTop';
+  import SetAdviceTemplate from '@/components/SetAdviceTemplate'
 
   export default {
     name: 'QuestionList',
@@ -33,7 +35,8 @@
     components: {
       SetQuestionnaire,
       SetQuestionnaireTemplate,
-      headTop
+      headTop,
+      SetAdviceTemplate,
     }
   }
 </script>

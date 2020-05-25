@@ -8,7 +8,6 @@ vue2 + vuex + vue-router + webpack + ES6/7 + less + element-ui
 
 
 ```
-##使用源 -g cnpm --registry=https://registry.npm.taobao.org
 npm install 
 
 npm install --save axios

@@ -20,6 +20,7 @@ const vueEdit = r => require.ensure([], () => r(require('@/page/vueEdit')), 'vue
 const adminSet = r => require.ensure([], () => r(require('@/page/adminSet')), 'adminSet');
 const sendMessage = r => require.ensure([], () => r(require('@/page/sendMessage')), 'sendMessage');
 const SetQuestion = r => require.ensure([], () => r(require('@/page/SetQuestion')), 'SetQuestion');
+const SetAdvice = r => require.ensure([], () => r(require('@/page/SetAdvice')), 'SetAdvice');
 const explain = r => require.ensure([], () => r(require('@/page/explain')), 'explain');
 const Statistics = r => require.ensure([], () => r(require('@/page/Statistics')), 'Statistics');
 const Questionnaire = r => require.ensure([], () => r(require('@/page/Questionnaire')), 'Questionnaire');
@@ -50,7 +51,8 @@ const routes = [
 			path: '/addTests',
 			component: addTests,
 			meta: ['添加数据', '添加测试'],
-		},{
+		},
+		{
 			path: '/userList',
 			component: userList,
 			meta: ['数据管理', '用户列表'],
@@ -101,12 +103,17 @@ const routes = [
 			component: SetQuestion
 		},
 		{
+			path: '/setAdvice',
+			component: SetAdvice
+		},
+		{
 			path: '/statistics',
 			component: Statistics
 		},
 		{
 			path: '/questionnaire/:id',
-			component: Questionnaire
+			component: Questionnaire,
+			meta: ['添加数据', '添加测试','问卷预览'],
 		},
 		{
 			path: '/success',

@@ -2,8 +2,8 @@
   <div>
     <el-row type="flex" justify="end" align="middle" style="padding: 20px">
       <el-col :span="2">
-        <router-link :to="{ path: 'addTests'}">
-          <el-button type="primary" size="small" style="postio">添加问卷模板</el-button>
+        <router-link :to="{ path: 'setAdvice'}">
+          <el-button type="primary" size="small" style="postio">添加建议模板</el-button>
         </router-link>
       </el-col>
     </el-row>
@@ -19,7 +19,7 @@
         </template>
       </el-table-column>
       <el-table-column
-        label="题目数量"
+        label="问卷分数"
         width="180">
         <template scope="scope">
           <span style="margin-left: 10px">{{ scope.row.topic.length }}</span>
@@ -27,7 +27,7 @@
       </el-table-column>
       <el-table-column label="操作">
         <template scope="scope">
-          <router-link :to="{ path: 'setQuestion', query: { questionnaireTemplateId: scope.row._id}}">
+          <router-link :to="{ path: 'setAdvice', query: { questionnaireTemplateId: scope.row._id}}">
             <el-button size="small">编辑</el-button>
           </router-link>
           <el-button type="danger" size="small" @click="remove(scope.row._id, scope.$index)">删除</el-button>
@@ -41,7 +41,7 @@
   import { mapActions, mapState } from 'vuex';
 
   export default {
-    name: 'SetQuestionnaireTemplate',
+    name: 'SetAdviceTemplate',
     data(){
       return {
         fullscreenLoading: false
