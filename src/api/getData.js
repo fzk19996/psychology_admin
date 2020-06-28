@@ -64,18 +64,18 @@ export const adminCount = date => fetch('/statis/admin/' + date + '/count');
  * 获取管理员数量
  */
 
-export const getAdminCount = data => fetch('/admin/count', data);
+export const getAdminCount = data => fetch('/statis/admin/count', data);
 /**
  * 获取推送数量
  */
 
-export const getArticalCount = data => fetch('/psychology/article/count', data);
+export const getArticalCount = data => fetch('/statis/article/count', data);
 
 /**
  * 获取用户数量
  */
 
-export const getUserCount = data => fetch('v1/user/count', data);
+export const getUserCount = data => fetch('/v1/user/count', data);
 /**
  * 获取测试数量
  */
@@ -194,3 +194,20 @@ export const deleteUser = userid => fetch('/v1/user/' + testid, {}, 'DELETE');
 export const getUserCity = () => fetch('/v1/user/city/count');
 
 
+export const queryArticleByName = data => fetch('/v1/queryArticleByName', data);
+
+export const queryTestByTitle = data => fetch('/test/queryTestByTitle', data);
+
+export const addPush = data => fetch('/psychology/addPush', data, 'POST');
+
+export const addTable = data => fetch('/test/addTable', data, 'POST');
+
+export const addExperiment = data => fetch('/test/addExperiment', data, 'POST');
+
+export const queryTableByTitle = data => fetch('/test/queryTableByTitle', data);
+
+export const queryExperimentByTitle = data => fetch('/test/queryExperimentByTitle', data);
+
+export const getAnswerList = data => fetch('/test/queryAnswerList', data);
+
+export const updateAnswer = data => fetch('/test/updateAnswer', data, 'POST');

@@ -71,7 +71,7 @@
 
 <script>
 import headTop from "../components/headTop";
-import { adminList, adminCount } from "@/api/getData";
+import { adminList, adminCount, getAdminCount} from "@/api/getData";
 export default {
     data() {
         return {
@@ -94,9 +94,9 @@ export default {
     methods: {
         async initData() {
             try {
-                const countData = await adminCount();
-                if (countData.status == 1) {
-                    this.count = countData.count;
+                const countData = await getAdminCount();
+                if (countData.status == 200) {
+                    this.count = countData.data;
                 } else {
                     throw new Error("获取数据失败");
                 }
@@ -117,7 +117,7 @@ export default {
             try {
                 const res = await adminList({
                     offset: this.offset,
-                    limit: this.limit,
+                    limit: 10,
                 });
                 if (res.status == 1) {
                     this.tableData = [];

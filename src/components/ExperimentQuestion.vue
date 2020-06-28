@@ -13,45 +13,39 @@
         <el-radio
           class="radio"
           v-model="question.type"
-          label="单选"
-        >单选</el-radio>
+          label="按键反应"
+        >按键反应</el-radio>
         <el-radio
           class="radio"
           v-model="question.type"
-          label="多选"
-        >多选</el-radio>
+          label="根据要求说出词语"
+        >根据要求说出词语</el-radio>
         <el-radio
           class="radio"
           v-model="question.type"
-          label="问答"
-        >问答</el-radio>
+          label="朗读"
+        >朗读</el-radio>
         <el-radio
           class="radio"
           v-model="question.type"
-          label="录音"
-        >录音</el-radio>
+          label="看图回答问题"
+        >看图回答问题</el-radio>
         <el-radio
           class="radio"
           v-model="question.type"
-          label="反应"
-        >反应</el-radio>
+          label="根据提问回答问题"
+        >根据提问回答问题</el-radio>
         <el-radio
           class="radio"
           v-model="question.type"
-          label="打分"
-        >打分</el-radio>
+          label="记忆测验"
+        >记忆测验</el-radio>
+        <el-radio
+          class="radio"
+          v-model="question.type"
+          label="量表填写"
+        >量表填写</el-radio>
     
-      </el-col>
-      <el-col
-        :span="3"
-        :offset="1"
-      >
-        <el-switch
-          v-model="question.must"
-          on-text="必填"
-          off-text="选填"
-          off-color="rgb(85, 85, 85)"
-        ></el-switch>
       </el-col>
     </el-row>
     <el-row
@@ -76,17 +70,18 @@
         :span="10"
         :offset="4"
       >
-        <el-upload
-          class="upload"
-          action="/video/upload"
-          :show-file-list="true"
-          :on-success="handleVideoSuccess"
-          :before-upload="beforeUploadVideo"
-          :on-progress="uploadVideoProcess"
-          :file-list="videoList"
+      <el-upload
+          class="upload-demo"
+          action="/img/upload"
+          :on-preview="handlePreview"
+          :on-remove="handleRemove"
+          :file-list="fileList"
+          list-type="picture"
+          :on-success='(response, file, fileList)=>handlerSubmitPic(response, file, fileList)'
+          v-if="question.type=='看图回答问题'"
         >
-          <li>上传问题材料</li>
-        </el-upload>
+         <el-button>上传图片<i class="el-icon-upload el-icon--right"></i></el-button>
+      </el-upload>
       </el-col>
     </el-row>
     <el-row
@@ -96,6 +91,7 @@
       class="markSetRow"
       v-for="(answer, index) in question.options"
       :key="index"
+      v-if="question.type=='量表填写'"
     >
       <el-col
         :span="14"
@@ -113,12 +109,6 @@
         :offset="1"
       >
         <span></span>
-        <el-input
-          type="textarea"
-          :rows="2"
-          v-model="answer.score"
-          placeholder="请输入分值"
-        ></el-input>
       </el-col>
       <el-col
         :span="10"
@@ -148,18 +138,6 @@
         :span="14"
         :offset="1"
       >
-
-        <el-upload
-          class="upload-demo"
-          action="/img/upload"
-          :on-preview="handlePreview"
-          :on-remove="handleRemove"
-          :file-list="fileList"
-          list-type="picture"
-          :on-success='(response, file, fileList)=>handlerSubmitPic(response, file, fileList,index)'
-        >
-          <el-button>上传图片<i class="el-icon-upload el-icon--right"></i></el-button>
-        </el-upload>
       </el-col>
     </el-row>
     <el-row
@@ -204,22 +182,17 @@ import bus from '../utils/bus';
 import { mapActions, mapState } from 'vuex';
 
 export default {
-  name: 'SetAnswer',
+  name: 'ExperimentQuestione',
   data () {
     return {
       answerTemplate: {
         content: '',
-        score: '',
-        allowAddReasonStatus: false, 
-        pictureList: "", //问卷选项图片
-        picList:''
       },
       questionTemplate: {
-        type: '单选',
+        type: '',
         question: '',
-        must: true,  // 是否必填
         options: [],
-        videoList:''
+        pic_url:''
       },
       question: {},
       selectedIndex: -1,
@@ -246,16 +219,12 @@ export default {
       // });
 
       this.$watch('question.type', y => {
-        this.showAnswer = this.question.type === '单选' || this.question.type === '多选';
-        this.allowAddReasonDisable = this.question.type !== '单选';
+        
       })
     },
-    handlerSubmitPic(response, file, fileList,index){
+    handlerSubmitPic(response, file, fileList){
       if(response){
-        if(this.question.options[index].picList=='')
-          this.question.options[index].picList += response
-        else
-        this.question.options[index].picList += ';'+response
+        this.question.pic_url = response
       }
     },
     addAnswer () {
@@ -266,10 +235,6 @@ export default {
       this.question.options.splice(index, 1);
     },
     save () {
-      if (this.question.type === '打分' || this.question.type === '问答') {
-        this.question = _.omit(this.question, 'options')
-      }
-      this.question.type === '多选'
       this.setAnswerList({ question: this.question, index: this.selectedIndex });
       this.clear();
     },

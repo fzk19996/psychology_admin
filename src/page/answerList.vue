@@ -8,27 +8,25 @@
                 style="width: 100%;"
             >
                 <el-table-column type="index" width="100"> </el-table-column>
-                <el-table-column property="registe_time" label="激活日期">
+                <el-table-column property="user_id" label="用户id">
                 </el-table-column>
-                <el-table-column property="username" label="用户名">
+                <el-table-column property="test_id" label="测试id">
                 </el-table-column>
-                <el-table-column property="email" label="邮箱">
+                <el-table-column property="create_time" label="提交时间">
                 </el-table-column>
-                <el-table-column property="level" label="等级">
-                </el-table-column>
-                <el-table-column property="testday" label="有效天数">
+                <el-table-column property="state" label="状态">
                 </el-table-column>
                 <el-table-column label="操作" width="200">
                     <template slot-scope="scope">
                         <el-button
                             size="mini"
                             @click="handleEdit(scope.$index, scope.row)"
-                            >修改账户</el-button
+                            >查看答案</el-button
                         >
                         <el-button
                             size="mini"
                             @click="handleDelete(scope.$index, scope.row)"
-                            >删除账户</el-button
+                            >删除答案</el-button
                         >
                     </template>
                 </el-table-column>
@@ -39,7 +37,7 @@
                     @size-change="handleSizeChange"
                     @current-change="handleCurrentChange"
                     :current-page="currentPage"
-                    :page-size="20"
+                    :page-size="pageSize"
                     layout="total, prev, pager, next"
                     :total="count"
                 >
@@ -49,30 +47,21 @@
             <el-dialog title="修改用户信息" v-model="dialogFormVisible">
                 <el-form :model="selectTable">
 
-                    <el-form-item label="用户邮箱" label-width="100px">
-                        <el-input v-model="selectTable.email"></el-input>
+                    <el-form-item label="量表答案" label-width="100px">
+                        {{selectTable.table_answer}}
                     </el-form-item>
-                    <el-form-item label="用户密码" label-width="100px"> 
-                        <el-input v-model="selectTable.password" show-password></el-input>
+                    <el-form-item label="实验答案" label-width="100px"> 
+                        {{selectTable.experiment_answer}}
                     </el-form-item>
-                    <el-form-item label="等级" label-width="100px">
-                        <el-input v-model="selectTable.level"></el-input>
+                    <el-form-item label="音频链接" label-width="100px">
+                        <a :href="selectTable.video_url" :download="'音频'" style="color:red;margin-left:50px">开始下载</a>
                     </el-form-item>
-                    <el-form-item label="激活时间" label-width="100px">
-                        <div class="block">
-                            <span class="demonstration"></span>
-                            <el-date-picker
-                                v-model="selectTable.registe_time"
-                                type="date"
-                                placeholder="选择日期"
-                            >
-                            </el-date-picker>
-                        </div>
-                    </el-form-item>
-                    <el-form-item label="有效天数" label-width="100px">
+                    <el-form-item label="填写评论" label-width="100px">
                         <el-input
-                            v-model="selectTable.testday"
-                            auto-complete="off"
+                            v-model="selectTable.comment"
+                            rows="5"
+                            style="width:90%"
+                            type="textarea"
                         ></el-input>
                     </el-form-item>
                 </el-form>
@@ -80,7 +69,7 @@
                     <el-button @click="dialogFormVisible = false"
                         >取 消</el-button
                     >
-                    <el-button type="primary" @click="updateuser"
+                    <el-button type="primary" @click="updateAnswer"
                         >确 定</el-button
                     >
                 </div>
@@ -91,17 +80,16 @@
 
 <script>
 import headTop from "../components/headTop";
-import { getUserList, getUserCount } from "@/api/getData";
+import { getAnswerList, updateAnswer } from "@/api/getData";
 export default {
     data() {
         return {
             tableData: [],
             currentRow: null,
-            offset: 0,
-            limit: 20,
             count: 0,
             currentPage: 1,
             selectTable: {},
+            pageSize:20,
             dialogFormVisible: false,
         };
     },
@@ -114,42 +102,40 @@ export default {
     methods: {
         async initData() {
             try {
-                const countData = await getUserCount();
-                if (countData.status == 200) {
-                    this.count = countData.data;
-                } else {
-                    console.log("获取数据失败")
-                }
-                this.getUsers();
+                this.getAnswers();
             } catch (err) {
                 console.log("获取数据失败");
             }
         },
-        async getUsers() {
-            const Users = await getUserList({
-                offset: parseInt(this.offset),
-                limit: parseInt(this.limit),
+        async getAnswers() {
+            const Answers = await getAnswerList({
+                index: parseInt((this.currentPage-1)*this.pageSize),
+                size: parseInt(this.pageSize),
             });
             this.tableData = [];
-            Users.data.forEach((item) => {
+            Answers.data.forEach((item) => {
                 const tableData = {};
-                tableData.username = item.username;
-                tableData.registe_time = item.register_time;
-                tableData.password = item.password;
-                tableData.email = item.email
+                tableData.user_id = item.user_id;
+                tableData.test_id = item.test_id;
+                tableData.create_time = item.create_time;
+                tableData.state = item.state
+                tableData.table_answer = item.table_answer
+                tableData.experiment_answer = item.experiment_answer
+                tableData.video_url = item.video_url
+                tableData.answer_id = item.answer_id
+                tableData.comment = item.comment
                 this.tableData.push(tableData);
             });
         },
-        async updateuser() {
+        async updateAnswer() {
             this.dialogFormVisible = false;
             try {
-                Object.assign(this.selectTable, this.address);
-                this.selectTable.category = this.selectedCategory.join("/");
-                const res = await updateUser(this.selectTable);
-                if (res.status == 1) {
+                
+                const res = await updateAnswer(this.selectTable);
+                if (res.status == 200) {
                     this.$message({
                         type: "success",
-                        message: "更新用户信息成功",
+                        message: res.message,
                     });
                     this.getUsers();
                 } else {
@@ -176,8 +162,9 @@ export default {
         handleEdit(index, row) {
             this.dialogFormVisible = true;
             this.selectTable = row;
-            this.address.address = row.address;
-            this.selectedCategory = row.category.split("/");
+            // this.address.address = row.address;
+            // this.selectedCategory = row.category.split("/");
+            console.log(this.selectTable)
         },
     },
 };

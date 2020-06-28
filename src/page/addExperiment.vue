@@ -1,15 +1,15 @@
 <template>
 <div class="widthHeight100">
-   <head-top></head-top>
   <el-container>
   <el-main>
+    <head-top></head-top>
     <el-row class="row-padding" type="flex" justify="space-between" align="middle" >
-      <el-col :span="5"><el-input v-model="title" placeholder="问卷模板名称" @blur="titleInput"></el-input></el-col>
+      <el-col :span="5" justify="centre"><el-input v-model="title" placeholder="请填写实验名称 " @blur="titleInput"></el-input></el-col>
       <el-col :span="5">
         <router-link :to="{ path: 'questionnaire/preview'}">
-          <el-button>预览问卷</el-button>
+          <el-button>预览量表</el-button>
         </router-link>
-        <el-button type="success" @click="save">保存问卷</el-button>
+        <el-button @click="save">保存实验</el-button>
       </el-col>
     </el-row>
     <el-row class="row-padding" type="flex" justify="left" align="top" >
@@ -17,7 +17,7 @@
         <el-row type="flex" justify="left" align="middle" >
           <h2>题目设置：</h2>
         </el-row>
-        <set-answer></set-answer>
+        <experiment-question></experiment-question>
       </el-col>
       <el-col :span="18">
         <el-row type="flex" justify="left" align="middle" >
@@ -35,10 +35,10 @@
 
 <script>
   import { mapActions, mapState } from 'vuex';
-  import SetAnswer from '../components/SetAnswer';
+  import ExperimentQuestion from '../components/ExperimentQuestion';
   import QuestionList from '../components/QuestionList';
-  import headTop from "../components/headTop";
-  import {addTest} from '@/api/getData'
+  import headTop from '@/components/headTop';
+  import {addExperiment} from '@/api/getData'
 
   export default {
     name: 'SetQuestion',
@@ -47,7 +47,6 @@
         title: ''
       }
     },
-    
     methods: {
       ...mapActions(['setQuestionnaireTitle', 'saveQuestionnaireTemplate', 'clearTemplate', 'getQuestionnaireTemplateById']),
       init() {
@@ -68,20 +67,23 @@
       },
       save () {
         if(this.validate()) {
-            addTest(this.QuestionnaireTemplate.template).then((res) => {
-            if(res.status!=200){
+          console.log(this.QuestionnaireTemplate.template)
+          addExperiment(this.QuestionnaireTemplate.template).then((error) => {
+            console.log('res')
+            console.log(error)
+            if(error){
               this.showError('保存失败');
             }else {
               this.showSuccess('保存成功');
               this.clear();
-              this.$router.replace({path: '/questionList'});
+              // this.$router.replace({path: '/questionList'});
             }
           });
         }
       },
       validate() {
-        if(this.title === '') return this.showWarning('问卷模板名称不能为空');
-        if(this.QuestionnaireTemplate.template.questions.length < 1) return this.showWarning('问卷模板至少包含一个问题');
+        if(this.title === '') return this.showWarning('实验名称不能为空');
+        if(this.QuestionnaireTemplate.template.questions.length < 1) return this.showWarning('实验至少包含一个问题');
         return true
       },
       clear() {
@@ -110,10 +112,9 @@
       }
     },
     components: {
-      SetAnswer,
+      ExperimentQuestion,
       QuestionList,
-      headTop,
-    
+      headTop
     },
     computed: {
       ...mapState({

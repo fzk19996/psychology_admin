@@ -7,7 +7,7 @@ const state = {
   templateId: '',
   template: {
     title: '',
-    topic: []
+    questions: []
   }, // 新增模板
   list: [], // 调查问卷设置问题列表
   question: {},  // 设置问卷页面左侧显示的问题
@@ -19,19 +19,19 @@ const mutations = {
   },
   setAnswerList(state, {question, index}) {
     if(index === -1){
-      state.template.topic.push(_.cloneDeep(question));
+      state.template.questions.push(_.cloneDeep(question));
     }else {
-      state.template.topic[index] = _.cloneDeep(question);
+      state.template.questions[index] = _.cloneDeep(question);
     }
   },
   unSetAnswerList(state, {index}) {
-    state.template.topic.splice(index, 1);
+    state.template.questions.splice(index, 1);
   },
   setQuestionnaireTitle(state, {title}) {
     state.template.title = title;
   },
   clearAnswerList(state) {
-    state.template.topic = [];
+    state.template.questions = [];
   },
   setQuestionnaireTemplateById(state, data) {
     state.template = data;
@@ -93,7 +93,7 @@ const actions = {
             resolve(error);
           });
       }else {
-        axios.post(`${bus.host}/questionnaireTemplate`, state.template)
+        axios.post(`${bus.host}/psychology/addTest`, state.template)
           .then(function ({data}) {
             resolve(null, data);
           })

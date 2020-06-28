@@ -10,32 +10,44 @@
                     label-width="110px"
                     class="demo-formData"
                 >
-                    <el-form-item label="测试标题" prop="title">
+                    <el-form-item label="推送标题" prop="title">
                         <el-input
                             v-model="formData.title"
+                            placeholder="请输入推送标题"
+                        ></el-input>
+                    </el-form-item>
+                    <el-form-item label="推送概要" prop="summary">
+                        <el-input
+                            v-model="formData.summary"
+                            placeholder="请输入推送概要"
+                        ></el-input>
+                    </el-form-item>
+                    <el-form-item label="选择文章" prop="article_id">
+                        <el-input
+                            v-model="article_name"
+                            placeholder="请输入文章标题"
+                        ></el-input>
+                        <el-button @click="click_queryArticle" >查询</el-button>
+                        <el-radio-group v-model="formData.article_id">
+                            <el-radio :label="item.article_id" :key="item.article_id" v-for="item in article_list">{{item.title}}</el-radio>
+                        </el-radio-group>
+                    </el-form-item>
+                    <el-form-item label="选择测试" prop="article_id">
+                        <el-input
+                            v-model="test_title"
                             placeholder="请输入测试标题"
                         ></el-input>
-                    </el-form-item>
-                    <el-form-item label="选择量表" >
-                        <el-input
-                            v-model="table_title"
-                            placeholder="请输入量表标题"
-                        ></el-input>
-                        <el-button @click="click_queryTable" >查询</el-button>
-                        <el-radio-group v-model="table_id">
-                            <el-radio :label="item.table_id" :key="item.table_id" v-for="item in table_list">{{item.title}}</el-radio>
+                        <el-button @click="click_queryTest" >查询</el-button>
+                        <el-radio-group v-model="formData.test_id">
+                            <el-radio :label="item.test_id" :key="item.test_id" v-for="item in test_list">{{item.title}}</el-radio>
                         </el-radio-group>
-                        <el-button @click="click_addTable" v-if="table_list.length>0">确认添加</el-button>
                     </el-form-item>
-                    <el-form-item label="选择实验">
+                    <el-form-item label="用户名称" prop="username_list">
                         <el-input
-                            v-model="experiment_title"
-                            placeholder="请输入实验标题"
+                            v-model="formData.username_list"
+                            placeholder="请输入用户名以分号隔开"
                         ></el-input>
-                        <el-button @click="click_queryExperiment" >查询</el-button>
-                        <el-radio-group v-model="formData.experiment_id">
-                            <el-radio :label="item.experiment_id" :key="item.experiment_id" v-for="item in experiment_list">{{item.title}}</el-radio>
-                        </el-radio-group>
+                        
                     </el-form-item>
                     <el-form-item>
                         <h4>开始时间</h4>
@@ -77,7 +89,7 @@
 
 <script>
 import headTop from "@/components/headTop";
-import { addTest, queryExperimentByTitle, queryTableByTitle} from "@/api/getData";
+import { addPush, queryArticleByName, queryTestByTitle} from "@/api/getData";
 import { baseUrl, baseImgPath } from "@/config/env";
 import { quillEditor } from "vue-quill-editor";
 import { mapState, mapMutations } from "vuex";
@@ -86,17 +98,47 @@ export default {
         return {
             formData: {
                 title: "", //推送标题
-                experiment_id: 0,
-                table_id_list: "",
+                summary: "", //概要
                 start_date: "",
-                end_date: "",         
+                end_date: "",
+                image_path: "",
+                article_id:0,
+                test_id:0,
+                username_list:""
             },
-            table_list:[],
-            experiment_list:[],
+            article_list:[],
+            test_list:[],
             article_name: "",
-            table_title:"",
-            experiment_title:"",
-            table_id: '', 
+            test_title:"",
+            pickerOptions: {
+                disabledDate(time) {
+                    return time.getTime() > Date.now();
+                },
+                shortcuts: [
+                    {
+                        text: "今天",
+                        onClick(picker) {
+                            picker.$emit("pick", new Date());
+                        },
+                    },
+                    {
+                        text: "昨天",
+                        onClick(picker) {
+                            const date = new Date();
+                            date.setTime(date.getTime() - 3600 * 1000 * 24);
+                            picker.$emit("pick", date);
+                        },
+                    },
+                    {
+                        text: "一周前",
+                        onClick(picker) {
+                            const date = new Date();
+                            date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
+                            picker.$emit("pick", date);
+                        },
+                    },
+                ],
+            },
             rules: {
                 title: [
                     {
@@ -113,6 +155,9 @@ export default {
                     },
                 ],
             },
+            baseUrl,
+            baseImgPath,
+            categoryOptions: [],
         };
     },
     computed: {
@@ -127,7 +172,7 @@ export default {
         quillEditor
     },
     mounted() {
-      
+        this.initData();
     },
     methods: {
         change_start_date(val){
@@ -136,35 +181,25 @@ export default {
         change_end_date(val){
             this.formData.end_date = val
         },
-        click_addTable(){
-          if(this.formData.table_id_list==''){
-            this.formData.table_id_list = this.table_id
-          }else{
-            this.formData.table_id_list += ';' + this.table_id
-          }
-          this.table_list = []
-          this.table_id = ''
-          this.table_title = ''
-        },
-        async click_queryTable(){
-            if(this.table_title=="")
+        async click_queryArticle(){
+            if(this.article_name=="")
                 return
             var data = {
-                'title':this.table_title
+                'name':this.article_name
             }
-            const res = await queryTableByTitle(data)
+            const res = await queryArticleByName(data)
             if(res.status==200)
-                this.table_list = res.data
+                this.article_list = res.data
         },
-        async click_queryExperiment(){
-            if(this.experiment_title=="")
+        async click_queryTest(){
+            if(this.test_title=="")
                 return
             var data = {
-                'title':this.experiment_title
+                'title':this.test_title
             }
-            const res = await queryExperimentByTitle(data)
+            const res = await queryTestByTitle(data)
             if(res.status==200)
-                this.experiment_list = res.data
+                this.test_list = res.data
         },
         onEditorReady(editor) {
             console.log("editor ready!", editor);
@@ -172,6 +207,33 @@ export default {
         submit() {
             console.log(this.content);
             this.$message.success("提交成功！");
+        },
+        async initData() {
+            try {
+                this.city = await cityGuess();
+                const categories = await articalCategory();
+                categories.forEach((item) => {
+                    if (item.sub_categories.length) {
+                        const addnew = {
+                            value: item.name,
+                            label: item.name,
+                            children: [],
+                        };
+                        item.sub_categories.forEach((subitem, index) => {
+                            if (index == 0) {
+                                return;
+                            }
+                            addnew.children.push({
+                                value: subitem.name,
+                                label: subitem.name,
+                            });
+                        });
+                        this.categoryOptions.push(addnew);
+                    }
+                });
+            } catch (err) {
+                console.log(err);
+            }
         },
         async querySearchAsync(queryString, cb) {
             if (queryString) {
@@ -253,7 +315,7 @@ export default {
                         }
                     );
                     try {
-                        let result = await addTest(this.formData);
+                        let result = await addPush(this.formData);
                         if (result.status == 200) {
                             this.$message({
                                 type: "success",

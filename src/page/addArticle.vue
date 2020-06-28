@@ -10,16 +10,10 @@
                     label-width="110px"
                     class="demo-formData"
                 >
-                    <el-form-item label="推送标题" prop="name">
+                    <el-form-item label="推送标题" prop="title">
                         <el-input
-                            v-model="formData.name"
+                            v-model="formData.title"
                             placeholder="请输入推送标题"
-                        ></el-input>
-                    </el-form-item>
-                    <el-form-item label="推送概要" prop="summary">
-                        <el-input
-                            v-model="formData.summary"
-                            placeholder="请输入推送概要"
                         ></el-input>
                     </el-form-item>
                     <el-form-item label="推送描述" prop="description">
@@ -35,92 +29,6 @@
                             </div>
                         </div>
                     </el-form-item>
-                    <el-form-item label="推送类型" style="white-space: nowrap;">
-                        <span>心理调适</span>
-                        <el-switch
-                            on-text=""
-                            off-text=""
-                            v-model="formData.psychological_adjustment"
-                        ></el-switch>
-                        <span>人际关系</span>
-                        <el-switch
-                            on-text=""
-                            off-text=""
-                            v-model="formData.interpersonal_relationship"
-                        ></el-switch>
-                        <span>抑郁</span>
-                        <el-switch
-                            on-text=""
-                            off-text=""
-                            v-model="formData.depression"
-                        ></el-switch>
-                    </el-form-item>
-                    <el-form-item style="white-space: nowrap;">
-                        <span>爱情</span>
-                        <el-switch
-                            on-text=""
-                            off-text=""
-                            v-model="formData.love"
-                        ></el-switch>
-                        <span>职场</span>
-                        <el-switch
-                            on-text=""
-                            off-text=""
-                            v-model="formData.workplace"
-                        ></el-switch>
-                        <span>情绪</span>
-                        <el-switch
-                            on-text=""
-                            off-text=""
-                            v-model="formData.emotion"
-                        ></el-switch>
-                    </el-form-item>
-
-                    <el-form-item label="上传推送封面">
-                        <el-upload
-                            class="avatar-uploader"
-                            :action="baseUrl + '/v1/addimg/article'"
-                            :show-file-list="false"
-                            :on-success="handleShopAvatarScucess"
-                            :before-upload="beforeAvatarUpload"
-                        >
-                            <img
-                                v-if="formData.image_path"
-                                :src="baseImgPath + formData.image_path"
-                                class="avatar"
-                            />
-                            <i
-                                v-else
-                                class="el-icon-plus avatar-uploader-icon"
-                            ></i>
-                        </el-upload>
-                    </el-form-item>
-                    <el-form-item>
-                        <router-link to="/addTests" class="build-new btn"
-                            >添加问卷</router-link
-                        >
-                        <h4>开始时间</h4>
-                        <div class="block">
-                            <span class="demonstration"></span>
-                            <el-date-picker
-                                v-model="formData.startTime"
-                                type="date"
-                                placeholder="选择日期"
-                            >
-                            </el-date-picker>
-                        </div>
-                        <h4>结束时间</h4>
-                        <div class="block">
-                            <span class="demonstration"></span>
-                            <el-date-picker
-                                v-model="formData.endTime"
-                                type="date"
-                                placeholder="选择日期"
-                            >
-                            </el-date-picker>
-                        </div>
-                    </el-form-item>
-
                     <el-form-item class="button_submit">
                         <el-button @click="submitForm('formData')"
                             >立即创建</el-button
@@ -142,19 +50,8 @@ export default {
     data() {
         return {
             formData: {
-                name: "", //推送标题
-                description: "", //介绍
-                summary: "", //概要
+                title: "", //推送标题
                 content: "",
-                psychological_adjustment: false,
-                interpersonal_relationship: false,
-                depression: false,
-                love: false,
-                workplace: false,
-                emotion: false,
-                startTime: "",
-                endTime: "",
-                image_path: "",
             },
             pickerOptions: {
                 disabledDate(time) {
@@ -186,14 +83,14 @@ export default {
                 ],
             },
             rules: {
-                name: [
+                title: [
                     {
                         required: true,
                         message: "请输入推送名称",
                         trigger: "blur",
                     },
                 ],
-                summary: [
+                content: [
                     {
                         required: true,
                         message: "请输入推送概要",
@@ -221,109 +118,6 @@ export default {
         this.initData();
     },
     methods: {
-        onEditorReady(editor) {
-            console.log("editor ready!", editor);
-        },
-        submit() {
-            console.log(this.content);
-            this.$message.success("提交成功！");
-        },
-        async initData() {
-            try {
-                this.city = await cityGuess();
-                const categories = await articalCategory();
-                categories.forEach((item) => {
-                    if (item.sub_categories.length) {
-                        const addnew = {
-                            value: item.name,
-                            label: item.name,
-                            children: [],
-                        };
-                        item.sub_categories.forEach((subitem, index) => {
-                            if (index == 0) {
-                                return;
-                            }
-                            addnew.children.push({
-                                value: subitem.name,
-                                label: subitem.name,
-                            });
-                        });
-                        this.categoryOptions.push(addnew);
-                    }
-                });
-            } catch (err) {
-                console.log(err);
-            }
-        },
-        async querySearchAsync(queryString, cb) {
-            if (queryString) {
-                try {
-                    const cityList = await searchplace(
-                        this.city.id,
-                        queryString
-                    );
-                    if (cityList instanceof Array) {
-                        cityList.map((item) => {
-                            item.value = item.summary;
-                            return item;
-                        });
-                        cb(cityList);
-                    }
-                } catch (err) {
-                    console.log(err);
-                }
-            }
-        },
-        addressSelect(summary) {
-            this.formData.latitude = summary.latitude;
-            this.formData.longitude = summary.longitude;
-            console.log(this.formData.latitude, this.formData.longitude);
-        },
-        handleShopAvatarScucess(res, file) {
-            if (res.status == 1) {
-                this.formData.image_path = res.image_path;
-            } else {
-                this.$message.error("上传图片失败！");
-            }
-        },
-        handleBusinessAvatarScucess(res, file) {
-            if (res.status == 1) {
-                this.formData.business_license_image = res.image_path;
-            } else {
-                this.$message.error("上传图片失败！");
-            }
-        },
-        handleServiceAvatarScucess(res, file) {
-            if (res.status == 1) {
-                this.formData.catering_service_license_image = res.image_path;
-            } else {
-                this.$message.error("上传图片失败！");
-            }
-        },
-        beforeAvatarUpload(file) {
-            const isRightType =
-                file.type === "image/jpeg" || file.type === "image/png";
-            const isLt2M = file.size / 1024 / 1024 < 2;
-
-            if (!isRightType) {
-                this.$message.error("上传图片只能是 JPG 格式!");
-            }
-            if (!isLt2M) {
-                this.$message.error("上传图片大小不能超过 2MB!");
-            }
-            return isRightType && isLt2M;
-        },
-        tableRowClassName(row, index) {
-            if (index === 1) {
-                return "info-row";
-            } else if (index === 3) {
-                return "positive-row";
-            }
-            return "";
-        },
-        handleDelete(index) {
-            this.activities.splice(index, 1);
-        },
         submitForm(formName) {
             this.$refs[formName].validate(async (valid) => {
                 if (valid) {
@@ -331,12 +125,12 @@ export default {
                         this.formData,
                         { activities: this.activities },
                         {
-                            category: this.selectedCategory.join("/"),
+                            category: 'none'
                         }
                     );
                     try {
                         let result = await addArticle(this.formData);
-                        if (result.status == 1) {
+                        if (result.status == 200) {
                             this.$message({
                                 type: "success",
                                 message: "添加成功",

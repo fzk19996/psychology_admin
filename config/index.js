@@ -27,7 +27,12 @@ module.exports = {
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      "/*":{
+        target:'http://127.0.0.1:8081/',
+        changeOrigin: true, // 支持跨域
+      }
+    },
     context: [ //代理路径
         '/psychology',
         '/admin',
@@ -38,6 +43,8 @@ module.exports = {
         '/diary',
         '/statis',
         '/img',
+        '/video',
+        '/static'
     ],
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README

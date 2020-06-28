@@ -27,7 +27,10 @@ const Questionnaire = r => require.ensure([], () => r(require('@/page/Questionna
 const Success = r => require.ensure([], () => r(require('@/page/Success')), 'Success');
 const Error = r => require.ensure([], () => r(require('@/page/Error')), 'Error');
 const Close = r => require.ensure([], () => r(require('@/page/Close')), 'Close');
-
+const addPush = r => require.ensure([], () => r(require('@/page/addPush')), 'addPush');
+const addTable = r => require.ensure([], () => r(require('@/page/addTable')), 'addTable');
+const addExperiment = r => require.ensure([], () => r(require('@/page/addExperiment')), 'addExperiment');
+const answerList = r => require.ensure([], () => r(require('@/page/answerList')), 'answerList');
 
 const routes = [
 	{
@@ -44,19 +47,38 @@ const routes = [
 			component: home,
 			meta: [],
 		},{
+			path:'/addTable',
+			component: addTable,
+			meta: ['添加数据', '添加量表']
+		},{
+			path:'/addExperiment',
+			component: addExperiment,
+			meta: ['添加数据', '添加实验']
+		},{
 			path: '/addArticle',
 			component: addArticle,
-			meta: ['添加数据', '添加推送'],
+			meta: ['添加数据', '添加文章'],
 		},{
 			path: '/addTests',
 			component: addTests,
 			meta: ['添加数据', '添加测试'],
 		},
 		{
+			path:'/addPush',
+			component: addPush,
+			meta:['添加数据', '添加推送']
+		},
+		{
 			path: '/userList',
 			component: userList,
 			meta: ['数据管理', '用户列表'],
-		},{
+		},
+		{
+			path:'/answerList',
+			component: answerList,
+			meta: ['数据管理', '答案列表']
+		},
+		{
 			path: '/articleList',
 			component: articleList,
 			meta: ['数据管理', '推送列表'],

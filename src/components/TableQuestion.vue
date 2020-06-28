@@ -20,26 +20,6 @@
           v-model="question.type"
           label="多选"
         >多选</el-radio>
-        <el-radio
-          class="radio"
-          v-model="question.type"
-          label="问答"
-        >问答</el-radio>
-        <el-radio
-          class="radio"
-          v-model="question.type"
-          label="录音"
-        >录音</el-radio>
-        <el-radio
-          class="radio"
-          v-model="question.type"
-          label="反应"
-        >反应</el-radio>
-        <el-radio
-          class="radio"
-          v-model="question.type"
-          label="打分"
-        >打分</el-radio>
     
       </el-col>
       <el-col
@@ -76,17 +56,6 @@
         :span="10"
         :offset="4"
       >
-        <el-upload
-          class="upload"
-          action="/video/upload"
-          :show-file-list="true"
-          :on-success="handleVideoSuccess"
-          :before-upload="beforeUploadVideo"
-          :on-progress="uploadVideoProcess"
-          :file-list="videoList"
-        >
-          <li>上传问题材料</li>
-        </el-upload>
       </el-col>
     </el-row>
     <el-row
@@ -148,18 +117,6 @@
         :span="14"
         :offset="1"
       >
-
-        <el-upload
-          class="upload-demo"
-          action="/img/upload"
-          :on-preview="handlePreview"
-          :on-remove="handleRemove"
-          :file-list="fileList"
-          list-type="picture"
-          :on-success='(response, file, fileList)=>handlerSubmitPic(response, file, fileList,index)'
-        >
-          <el-button>上传图片<i class="el-icon-upload el-icon--right"></i></el-button>
-        </el-upload>
       </el-col>
     </el-row>
     <el-row
@@ -204,7 +161,7 @@ import bus from '../utils/bus';
 import { mapActions, mapState } from 'vuex';
 
 export default {
-  name: 'SetAnswer',
+  name: 'TableQuestion',
   data () {
     return {
       answerTemplate: {

@@ -121,6 +121,8 @@
                 dialogFormVisible: false,
                 categoryOptions: [],
                 selectedCategory: [],
+                offset:0,
+                limit:20
             }
         },
              //时间选择器
@@ -165,8 +167,8 @@
             async initData(){
                 try{
                     const countData = await getArticalCount();
-                    if (countData.status == 1) {
-                        this.count = countData.count;
+                    if (countData.status == 200) {
+                        this.count = countData.data;
                     }else{
                         throw new Error('获取数据失败');
                     }
@@ -202,9 +204,9 @@
                 }
             },
             async getArticle(){
-                const article = await getArticle({ startTime: this.startTime, endTime: this.endTime});
+                const article = await getArticle({ offset:this.offset, limit: 10});
                 this.tableData = [];
-                article.forEach(item => {
+                article.data.forEach(item => {
                     const tableData = {};
                     tableData.name = item.name;
                     tableData.summary = item.summary;

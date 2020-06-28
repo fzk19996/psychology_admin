@@ -10,11 +10,15 @@
 						<el-menu-item index="articleList">推送列表</el-menu-item>
 						<el-menu-item index="testList">测试数据</el-menu-item>
 						<el-menu-item index="adminList">管理员列表</el-menu-item>
+						<el-menu-item index="answerList">答案列表</el-menu-item>
 					</el-submenu>
 					<el-submenu index="3">
 						<template slot="title"><i class="el-icon-plus"></i>添加数据</template>
-						<el-menu-item index="addArticle">添加推送</el-menu-item>
+						<el-menu-item index="addArticle">添加文章</el-menu-item>
 						<el-menu-item index="addTests">添加测试</el-menu-item>
+						<el-menu-item index="addPush">添加推送</el-menu-item>
+						<el-menu-item index="addTable">添加量表</el-menu-item>
+						<el-menu-item index="addExperiment">添加实验</el-menu-item>
 					</el-submenu>
 					<el-submenu index="4">
 						<template slot="title"><i class="el-icon-star-on"></i>图表</template>

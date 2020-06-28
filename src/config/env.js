@@ -11,7 +11,7 @@ let routerMode = 'hash';
 let baseImgPath;
 
 if (process.env.NODE_ENV == 'development') {
-	baseUrl = '';
+	baseUrl = 'http://127.0.0.1:8081';
     baseImgPath = '/img/';
 }else{
 	baseUrl = '//buaapsy.com';
@@ -19,7 +19,7 @@ if (process.env.NODE_ENV == 'development') {
 }
 
 export {
-	baseUrl,
+	baseUrl,	
 	routerMode,
 	baseImgPath
 }

@@ -53,9 +53,10 @@ compiler.plugin('compilation', function (compilation) {
 var context = config.dev.context
 
 switch(process.env.NODE_ENV){
-    case 'local': var proxypath = 'http://localhost:8001'; break;
+    case 'local': var proxypath = 'http://localhost:8081'; break;
     case 'online': var proxypath = 'http://buaapsy.com'; break;
 }
+proxypath = 'http://localhost:8081'
 var options = {
     target: proxypath,
     changeOrigin: true,

@@ -2,7 +2,7 @@
   <div>
     <el-row type="flex" justify="left" align="middle" class="markSetRow" >
       <el-col :offset="1"> 
-        <el-row type="flex" justify="left" align="middle" class="questionListRow" v-for="(item,index) in QuestionnaireTemplate.template.topic" :key="index" >
+        <el-row type="flex" justify="left" align="middle" class="questionListRow" v-for="(item,index) in QuestionnaireTemplate.template.questions" :key="index" >
           <el-col><el-button  @click="selectedRow(index)"  class="questionListText" style="background: aliceblue" >问题{{index + 1}}({{item.type}})：{{item.question}}</el-button ></el-col>
         </el-row>
       </el-col>
