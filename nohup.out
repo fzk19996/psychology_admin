@@ -1,0 +1,849 @@
+
+> ----------@1.0.1 dev /home/fzk/code/psychology_admin
+> cross-env NODE_ENV=online node build/dev-server.js
+
+[HPM] Proxy created: [
+  '/psychology', '/admin',
+  '/v1',         '/user',
+  '/article',    '/test',
+  '/diary',      '/statis',
+  '/img',        '/video',
+  '/static'
+]  ->  http://localhost:8081
+> Starting dev server...
+ WARNING  Compiled with 2 warnings2:37:58 AM
+
+ warning  in ./src/page/articleList.vue
+
+120:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+> Listening at http://localhost:8002
+
+(node:31358) UnhandledPromiseRejectionWarning: Error: Exited with code 3
+    at ChildProcess.<anonymous> (/home/fzk/code/psychology_admin/node_modules/opn/index.js:83:13)
+    at Object.onceWrapper (events.js:417:26)
+    at ChildProcess.emit (events.js:310:20)
+    at maybeClose (internal/child_process.js:1021:16)
+    at Socket.<anonymous> (internal/child_process.js:443:11)
+    at Socket.emit (events.js:310:20)
+    at Pipe.<anonymous> (net.js:672:12)
+(node:31358) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:31358) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+
+> ----------@1.0.1 dev /home/fzk/code/psychology_admin
+> cross-env NODE_ENV=online node build/dev-server.js
+
+[HPM] Proxy created: [
+  '/psychology', '/admin',
+  '/v1',         '/user',
+  '/article',    '/test',
+  '/diary',      '/statis',
+  '/img',        '/video',
+  '/static'
+]  ->  http://localhost:8081
+> Starting dev server...
+ WARNING  Compiled with 2 warnings2:42:40 AM
+
+ warning  in ./src/page/articleList.vue
+
+120:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+> Listening at http://localhost:8002
+
+(node:32207) UnhandledPromiseRejectionWarning: Error: Exited with code 3
+    at ChildProcess.<anonymous> (/home/fzk/code/psychology_admin/node_modules/opn/index.js:83:13)
+    at Object.onceWrapper (events.js:417:26)
+    at ChildProcess.emit (events.js:310:20)
+    at maybeClose (internal/child_process.js:1021:16)
+    at Socket.<anonymous> (internal/child_process.js:443:11)
+    at Socket.emit (events.js:310:20)
+    at Pipe.<anonymous> (net.js:672:12)
+(node:32207) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:32207) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[HPM] Error occurred while trying to proxy request /admin/info from 123.57.178.92:8002 to http://localhost:8081 (ECONNRESET) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+
+> ----------@1.0.1 dev /home/fzk/code/psychology_admin
+> cross-env NODE_ENV=online node build/dev-server.js
+
+[HPM] Proxy created: [
+  '/psychology', '/admin',
+  '/v1',         '/user',
+  '/article',    '/test',
+  '/diary',      '/statis',
+  '/img',        '/video',
+  '/static',     '/push'
+]  ->  http://localhost:8081
+> Starting dev server...
+ WARNING  Compiled with 2 warnings5:02:25 PM
+
+ warning  in ./src/page/articleList.vue
+
+120:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+> Listening at http://localhost:8002
+
+(node:21826) UnhandledPromiseRejectionWarning: Error: Exited with code 3
+    at ChildProcess.<anonymous> (/home/fzk/code/psychology_admin/node_modules/opn/index.js:83:13)
+    at Object.onceWrapper (events.js:417:26)
+    at ChildProcess.emit (events.js:310:20)
+    at maybeClose (internal/child_process.js:1021:16)
+    at Socket.<anonymous> (internal/child_process.js:443:11)
+    at Socket.emit (events.js:310:20)
+    at Pipe.<anonymous> (net.js:672:12)
+(node:21826) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:21826) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+
+> ----------@1.0.1 dev /home/fzk/code/psychology_admin
+> cross-env NODE_ENV=online node build/dev-server.js
+
+[HPM] Proxy created: [
+  '/psychology', '/admin',
+  '/v1',         '/user',
+  '/article',    '/test',
+  '/diary',      '/statis',
+  '/img',        '/video',
+  '/static',     '/push'
+]  ->  http://localhost:8081
+> Starting dev server...
+ WARNING  Compiled with 2 warnings5:18:56 PM
+
+ warning  in ./src/page/articleList.vue
+
+120:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+> Listening at http://localhost:8002
+
+(node:23257) UnhandledPromiseRejectionWarning: Error: Exited with code 3
+    at ChildProcess.<anonymous> (/home/fzk/code/psychology_admin/node_modules/opn/index.js:83:13)
+    at Object.onceWrapper (events.js:417:26)
+    at ChildProcess.emit (events.js:310:20)
+    at maybeClose (internal/child_process.js:1021:16)
+    at Socket.<anonymous> (internal/child_process.js:443:11)
+    at Socket.emit (events.js:310:20)
+    at Pipe.<anonymous> (net.js:672:12)
+(node:23257) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:23257) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+
+> ----------@1.0.1 dev /home/fzk/code/psychology_admin
+> cross-env NODE_ENV=online node build/dev-server.js
+
+[HPM] Proxy created: [
+  '/psychology', '/admin',
+  '/v1',         '/user',
+  '/article',    '/test',
+  '/diary',      '/statis',
+  '/img',        '/video',
+  '/static',     '/push'
+]  ->  http://localhost:8081
+> Starting dev server...
+ WARNING  Compiled with 2 warnings8:39:31 PM
+
+ warning  in ./src/page/articleList.vue
+
+120:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+> Listening at http://localhost:8002
+
+(node:2795) UnhandledPromiseRejectionWarning: Error: Exited with code 3
+    at ChildProcess.<anonymous> (/home/fzk/code/psychology_admin/node_modules/opn/index.js:83:13)
+    at Object.onceWrapper (events.js:417:26)
+    at ChildProcess.emit (events.js:310:20)
+    at maybeClose (internal/child_process.js:1021:16)
+    at Socket.<anonymous> (internal/child_process.js:443:11)
+    at Socket.emit (events.js:310:20)
+    at Pipe.<anonymous> (net.js:672:12)
+(node:2795) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:2795) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+ WAIT  Compiling...11:19:44 AM
+
+ WARNING  Compiled with 2 warnings11:19:46 AM
+
+ warning  in ./src/page/articleList.vue
+
+120:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ WAIT  Compiling...3:26:23 PM
+
+ WARNING  Compiled with 2 warnings3:26:24 PM
+
+ warning  in ./src/page/articleList.vue
+
+120:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ WAIT  Compiling...5:19:56 PM
+
+ WARNING  Compiled with 2 warnings5:19:57 PM
+
+ warning  in ./src/page/articleList.vue
+
+120:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+[HPM] Error occurred while trying to proxy request /test/queryQuestionList from 123.57.178.92:8002 to http://localhost:8081 (ECONNRESET) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+ WAIT  Compiling...1:17:50 AM
+
+ WARNING  Compiled with 2 warnings1:17:51 AM
+
+ warning  in ./src/page/articleList.vue
+
+120:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+
+> ----------@1.0.1 dev /home/fzk/code/psychology_admin
+> cross-env NODE_ENV=online node build/dev-server.js
+
+[HPM] Proxy created: [
+  '/psychology', '/admin',
+  '/v1',         '/user',
+  '/article',    '/test',
+  '/diary',      '/statis',
+  '/img',        '/video',
+  '/static',     '/push'
+]  ->  http://localhost:8081
+> Starting dev server...
+ WARNING  Compiled with 2 warnings6:45:48 PM
+
+ warning  in ./src/page/articleList.vue
+
+120:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+> Listening at http://localhost:8002
+
+(node:628) UnhandledPromiseRejectionWarning: Error: Exited with code 3
+    at ChildProcess.<anonymous> (/home/fzk/code/psychology_admin/node_modules/opn/index.js:83:13)
+    at Object.onceWrapper (events.js:417:26)
+    at ChildProcess.emit (events.js:310:20)
+    at maybeClose (internal/child_process.js:1021:16)
+    at Socket.<anonymous> (internal/child_process.js:443:11)
+    at Socket.emit (events.js:310:20)
+    at Pipe.<anonymous> (net.js:672:12)
+(node:628) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:628) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+ WAIT  Compiling...2:53:30 PM
+
+ WARNING  Compiled with 2 warnings2:53:33 PM
+
+ warning  in ./src/page/articleList.vue
+
+120:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+[HPM] Error occurred while trying to proxy request /admin/info from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/info from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/info from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/info from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/info from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/info from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/info from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/info from 123.57.178.92:8002 to http://localhost:8081 (ECONNRESET) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/info from 123.57.178.92:8002 to http://localhost:8081 (ECONNRESET) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/info from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+[HPM] Error occurred while trying to proxy request /admin/login from 123.57.178.92:8002 to http://localhost:8081 (ECONNREFUSED) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+
+> ----------@1.0.1 dev /home/fzk/code/psychology_admin
+> cross-env NODE_ENV=online node build/dev-server.js
+
+[HPM] Proxy created: [
+  '/psychology', '/admin',
+  '/v1',         '/user',
+  '/article',    '/test',
+  '/diary',      '/statis',
+  '/img',        '/video',
+  '/static',     '/push',
+  '/answer'
+]  ->  http://localhost:8081
+> Starting dev server...
+
+> ----------@1.0.1 dev /home/fzk/code/psychology_admin
+> cross-env NODE_ENV=online node build/dev-server.js
+
+[HPM] Proxy created: [
+  '/psychology', '/admin',
+  '/v1',         '/user',
+  '/article',    '/test',
+  '/diary',      '/statis',
+  '/img',        '/video',
+  '/static',     '/push',
+  '/answer'
+]  ->  http://localhost:8081
+> Starting dev server...
+ WARNING  Compiled with 2 warnings10:39:57 AM
+
+ warning  in ./src/page/answerList_single.vue
+
+(Emitted value instead of an instance of Error) <el-row v-for="tmp in varNameList">: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.
+
+ @ ./src/page/answerList_single.vue 9:2-190
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi ./build/dev-client ./src/main.js
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+> Listening at http://localhost:8002
+
+(node:1927) UnhandledPromiseRejectionWarning: Error: Exited with code 3
+    at ChildProcess.<anonymous> (/home/fzk/code/psychology_admin/node_modules/opn/index.js:83:13)
+    at Object.onceWrapper (events.js:417:26)
+    at ChildProcess.emit (events.js:310:20)
+    at maybeClose (internal/child_process.js:1021:16)
+    at Socket.<anonymous> (internal/child_process.js:443:11)
+    at Socket.emit (events.js:310:20)
+    at Pipe.<anonymous> (net.js:672:12)
+(node:1927) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:1927) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+
+> ----------@1.0.1 dev /home/fzk/code/psychology_admin
+> cross-env NODE_ENV=online node build/dev-server.js
+
+
+> ----------@1.0.1 dev /home/fzk/code/psychology_admin
+> cross-env NODE_ENV=online node build/dev-server.js
+
+[HPM] Proxy created: [
+  '/psychology', '/admin',
+  '/v1',         '/user',
+  '/article',    '/test',
+  '/diary',      '/statis',
+  '/img',        '/video',
+  '/static',     '/push',
+  '/answer'
+]  ->  http://localhost:8081
+> Starting dev server...
+ WARNING  Compiled with 2 warnings10:56:57 AM
+
+ warning  in ./src/page/answerList_single.vue
+
+(Emitted value instead of an instance of Error) <el-row v-for="tmp in varNameList">: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.
+
+ @ ./src/page/answerList_single.vue 9:2-190
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi ./build/dev-client ./src/main.js
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+> Listening at http://localhost:8002
+
+(node:25422) UnhandledPromiseRejectionWarning: Error: Exited with code 3
+    at ChildProcess.<anonymous> (/home/fzk/code/psychology_admin/node_modules/opn/index.js:83:13)
+    at Object.onceWrapper (events.js:417:26)
+    at ChildProcess.emit (events.js:310:20)
+    at maybeClose (internal/child_process.js:1021:16)
+    at Socket.<anonymous> (internal/child_process.js:443:11)
+    at Socket.emit (events.js:310:20)
+    at Pipe.<anonymous> (net.js:672:12)
+(node:25422) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:25422) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+
+> ----------@1.0.1 dev /home/fzk/code/psychology_admin
+> cross-env NODE_ENV=online node build/dev-server.js
+
+[HPM] Proxy created: [
+  '/psychology', '/admin',
+  '/v1',         '/user',
+  '/article',    '/test',
+  '/diary',      '/statis',
+  '/img',        '/video',
+  '/static',     '/push',
+  '/answer'
+]  ->  http://localhost:8081
+> Starting dev server...
+ WARNING  Compiled with 2 warnings1:15:34 PM
+
+ warning  in ./src/page/answerList_single.vue
+
+(Emitted value instead of an instance of Error) <el-row v-for="tmp in varNameList">: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.
+
+ @ ./src/page/answerList_single.vue 9:2-190
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi ./build/dev-client ./src/main.js
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+> Listening at http://localhost:8002
+
+(node:26276) UnhandledPromiseRejectionWarning: Error: Exited with code 3
+    at ChildProcess.<anonymous> (/home/fzk/code/psychology_admin/node_modules/opn/index.js:83:13)
+    at Object.onceWrapper (events.js:417:26)
+    at ChildProcess.emit (events.js:310:20)
+    at maybeClose (internal/child_process.js:1021:16)
+    at Socket.<anonymous> (internal/child_process.js:443:11)
+    at Socket.emit (events.js:310:20)
+    at Pipe.<anonymous> (net.js:672:12)
+(node:26276) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:26276) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+ WAIT  Compiling...2:39:38 AM
+
+ WARNING  Compiled with 2 warnings2:39:41 AM
+
+ warning  in ./src/page/answerList_single.vue
+
+(Emitted value instead of an instance of Error) <el-row v-for="tmp in varNameList">: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.
+
+ @ ./src/page/answerList_single.vue 9:2-190
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi ./build/dev-client ./src/main.js
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+
+> ----------@1.0.1 dev /home/fzk/code/psychology_admin
+> cross-env NODE_ENV=online node build/dev-server.js
+
+[HPM] Proxy created: [
+  '/psychology', '/admin',
+  '/v1',         '/user',
+  '/article',    '/test',
+  '/diary',      '/statis',
+  '/img',        '/video',
+  '/static',     '/push',
+  '/answer'
+]  ->  http://localhost:8081
+> Starting dev server...
+ WARNING  Compiled with 2 warnings3:06:17 PM
+
+ warning  in ./src/page/answerList_single.vue
+
+(Emitted value instead of an instance of Error) <el-row v-for="tmp in varNameList">: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.
+
+ @ ./src/page/answerList_single.vue 9:2-190
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi ./build/dev-client ./src/main.js
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+> Listening at http://localhost:8002
+
+(node:27226) UnhandledPromiseRejectionWarning: Error: Exited with code 3
+    at ChildProcess.<anonymous> (/home/fzk/code/psychology_admin/node_modules/opn/index.js:83:13)
+    at Object.onceWrapper (events.js:417:26)
+    at ChildProcess.emit (events.js:310:20)
+    at maybeClose (internal/child_process.js:1021:16)
+    at Socket.<anonymous> (internal/child_process.js:443:11)
+    at Socket.emit (events.js:310:20)
+    at Pipe.<anonymous> (net.js:672:12)
+(node:27226) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:27226) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+ WAIT  Compiling...10:02:07 PM
+
+ WARNING  Compiled with 2 warnings10:02:09 PM
+
+ warning  in ./src/page/answerList_single.vue
+
+(Emitted value instead of an instance of Error) <el-row v-for="tmp in varNameList">: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.
+
+ @ ./src/page/answerList_single.vue 9:2-190
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi ./build/dev-client ./src/main.js
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ WAIT  Compiling...10:55:19 PM
+
+ WARNING  Compiled with 2 warnings10:55:30 PM
+
+ warning  in ./src/page/answerList_single.vue
+
+(Emitted value instead of an instance of Error) <el-row v-for="tmp in varNameList">: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.
+
+ @ ./src/page/answerList_single.vue 9:2-190
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi ./build/dev-client ./src/main.js
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+Error: -jar requires jar file specification
+Usage: java [-options] class [args...]
+           (to execute a class)
+   or  java [-options] -jar jarfile [args...]
+           (to execute a jar file)
+where options include:
+    -d32	  use a 32-bit data model if available
+    -d64	  use a 64-bit data model if available
+    -server	  to select the "server" VM
+                  The default VM is server,
+                  because you are running on a server-class machine.
+
+
+    -cp <class search path of directories and zip/jar files>
+    -classpath <class search path of directories and zip/jar files>
+                  A : separated list of directories, JAR archives,
+                  and ZIP archives to search for class files.
+    -D<name>=<value>
+                  set a system property
+    -verbose:[class|gc|jni]
+                  enable verbose output
+    -version      print product version and exit
+    -version:<value>
+                  Warning: this feature is deprecated and will be removed
+                  in a future release.
+                  require the specified version to run
+    -showversion  print product version and continue
+    -jre-restrict-search | -no-jre-restrict-search
+                  Warning: this feature is deprecated and will be removed
+                  in a future release.
+                  include/exclude user private JREs in the version search
+    -? -help      print this help message
+    -X            print help on non-standard options
+    -ea[:<packagename>...|:<classname>]
+    -enableassertions[:<packagename>...|:<classname>]
+                  enable assertions with specified granularity
+    -da[:<packagename>...|:<classname>]
+    -disableassertions[:<packagename>...|:<classname>]
+                  disable assertions with specified granularity
+    -esa | -enablesystemassertions
+                  enable system assertions
+    -dsa | -disablesystemassertions
+                  disable system assertions
+    -agentlib:<libname>[=<options>]
+                  load native agent library <libname>, e.g. -agentlib:hprof
+                  see also, -agentlib:jdwp=help and -agentlib:hprof=help
+    -agentpath:<pathname>[=<options>]
+                  load native agent library by full pathname
+    -javaagent:<jarpath>[=<options>]
+                  load Java programming language agent, see java.lang.instrument
+    -splash:<imagepath>
+                  show splash screen with specified image
+See http://www.oracle.com/technetwork/java/javase/documentation/index.html for more details.
+
+> ----------@1.0.1 dev /home/fzk/code/psychology_admin
+> cross-env NODE_ENV=online node build/dev-server.js
+
+[HPM] Proxy created: [
+  '/psychology', '/admin',
+  '/v1',         '/user',
+  '/article',    '/test',
+  '/diary',      '/statis',
+  '/img',        '/video',
+  '/static',     '/push',
+  '/answer'
+]  ->  http://localhost:8081
+> Starting dev server...
+
+> ----------@1.0.1 dev /home/fzk/code/psychology_admin
+> cross-env NODE_ENV=online node build/dev-server.js
+
+[HPM] Proxy created: [
+  '/psychology', '/admin',
+  '/v1',         '/user',
+  '/article',    '/test',
+  '/diary',      '/statis',
+  '/img',        '/video',
+  '/static',     '/push',
+  '/answer'
+]  ->  http://localhost:8081
+> Starting dev server...
+ WARNING  Compiled with 2 warnings9:30:32 PM
+
+ warning  in ./src/page/answerList_single.vue
+
+(Emitted value instead of an instance of Error) <el-row v-for="tmp in varNameList">: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.
+
+ @ ./src/page/answerList_single.vue 9:2-190
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi ./build/dev-client ./src/main.js
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+> Listening at http://localhost:8002
+
+(node:26779) UnhandledPromiseRejectionWarning: Error: Exited with code 3
+    at ChildProcess.<anonymous> (/home/fzk/code/psychology_admin/node_modules/opn/index.js:83:13)
+    at Object.onceWrapper (events.js:417:26)
+    at ChildProcess.emit (events.js:310:20)
+    at maybeClose (internal/child_process.js:1021:16)
+    at Socket.<anonymous> (internal/child_process.js:443:11)
+    at Socket.emit (events.js:310:20)
+    at Pipe.<anonymous> (net.js:672:12)
+(node:26779) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:26779) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+
+> ----------@1.0.1 dev /home/fzk/code/psychology_admin
+> cross-env NODE_ENV=online node build/dev-server.js
+
+[HPM] Proxy created: [
+  '/psychology', '/admin',
+  '/v1',         '/user',
+  '/article',    '/test',
+  '/diary',      '/statis',
+  '/img',        '/video',
+  '/static',     '/push',
+  '/answer'
+]  ->  http://localhost:8081
+> Starting dev server...
+ WARNING  Compiled with 2 warnings1:32:17 PM
+
+ warning  in ./src/page/answerList_single.vue
+
+(Emitted value instead of an instance of Error) <el-row v-for="tmp in varNameList">: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.
+
+ @ ./src/page/answerList_single.vue 9:2-190
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi ./build/dev-client ./src/main.js
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+> Listening at http://localhost:8002
+
+(node:28476) UnhandledPromiseRejectionWarning: Error: Exited with code 3
+    at ChildProcess.<anonymous> (/home/fzk/code/psychology_admin/node_modules/opn/index.js:83:13)
+    at Object.onceWrapper (events.js:417:26)
+    at ChildProcess.emit (events.js:310:20)
+    at maybeClose (internal/child_process.js:1021:16)
+    at Socket.<anonymous> (internal/child_process.js:443:11)
+    at Socket.emit (events.js:310:20)
+    at Pipe.<anonymous> (net.js:672:12)
+(node:28476) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:28476) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+ WAIT  Compiling...5:03:47 PM
+
+ WARNING  Compiled with 2 warnings5:03:48 PM
+
+ warning  in ./src/page/answerList_single.vue
+
+(Emitted value instead of an instance of Error) <el-row v-for="tmp in varNameList">: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.
+
+ @ ./src/page/answerList_single.vue 9:2-190
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi ./build/dev-client ./src/main.js
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ WAIT  Compiling...5:05:25 PM
+
+ WARNING  Compiled with 2 warnings5:05:28 PM
+
+ warning  in ./src/page/answerList_single.vue
+
+(Emitted value instead of an instance of Error) <el-row v-for="tmp in varNameList">: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.
+
+ @ ./src/page/answerList_single.vue 9:2-190
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi ./build/dev-client ./src/main.js
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ WAIT  Compiling...1:23:49 PM
+
+ WARNING  Compiled with 2 warnings1:23:50 PM
+
+ warning  in ./src/page/answerList_single.vue
+
+(Emitted value instead of an instance of Error) <el-row v-for="tmp in varNameList">: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.
+
+ @ ./src/page/answerList_single.vue 9:2-190
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi ./build/dev-client ./src/main.js
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ WAIT  Compiling...1:23:52 PM
+
+ WARNING  Compiled with 2 warnings1:23:53 PM
+
+ warning  in ./src/page/answerList_single.vue
+
+(Emitted value instead of an instance of Error) <el-row v-for="tmp in varNameList">: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.
+
+ @ ./src/page/answerList_single.vue 9:2-190
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi ./build/dev-client ./src/main.js
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ WAIT  Compiling...1:26:34 PM
+
+ WARNING  Compiled with 2 warnings1:26:35 PM
+
+ warning  in ./src/page/answerList_single.vue
+
+(Emitted value instead of an instance of Error) <el-row v-for="tmp in varNameList">: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.
+
+ @ ./src/page/answerList_single.vue 9:2-190
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi ./build/dev-client ./src/main.js
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ WAIT  Compiling...1:26:44 PM
+
+ WARNING  Compiled with 2 warnings1:26:45 PM
+
+ warning  in ./src/page/answerList_single.vue
+
+(Emitted value instead of an instance of Error) <el-row v-for="tmp in varNameList">: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.
+
+ @ ./src/page/answerList_single.vue 9:2-190
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi ./build/dev-client ./src/main.js
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
+ WAIT  Compiling...1:26:51 PM
+
+ WARNING  Compiled with 2 warnings1:26:51 PM
+
+ warning  in ./src/page/answerList_single.vue
+
+(Emitted value instead of an instance of Error) <el-row v-for="tmp in varNameList">: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.
+
+ @ ./src/page/answerList_single.vue 9:2-190
+ @ ./src/router/index.js
+ @ ./src/main.js
+ @ multi ./build/dev-client ./src/main.js
+
+ warning  in ./src/page/SetAdvice.vue
+
+73:39-54 "export 'articalCategory' was not found in '@/api/getData'
+
