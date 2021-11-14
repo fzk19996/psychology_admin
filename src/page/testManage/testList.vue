@@ -1,12 +1,6 @@
 <template>
     <div class="fillcontain">
         <head-top></head-top>
-        <el-row>
-            <el-col :span=3>
-                <el-input v-model="question_id" label="输入题目id"></el-input>
-                <el-button @click="mohu_query_question">查询</el-button>
-            </el-col>
-        </el-row>
         <div class="table_container">
             <el-table
                 :data="tableData"
@@ -37,15 +31,26 @@
                 </el-table-column>
             </el-table>
 
+            <div class="Pagination" style="text-align: left; margin-top: 10px;">
+                <el-pagination
+                    @size-change="handleSizeChange"
+                    @current-change="handleCurrentChange"
+                    :current-page="currentPage"
+                    :page-size="pageSize"
+                    layout="total, prev, pager, next"
+                    :total="count"
+                >
+                </el-pagination>
+            </div>
+
         </div>
     </div>
 </template>
 
 <script>
 import headTop from "../../components/headTop";
-import {queryTestList, deleteTest} from "@/api/getData";
+import {queryTestList, queryTestCnt} from "@/api/getData";
 import qs from 'qs';
-import axios from 'axios';
 
 export default {
     data() {
@@ -54,11 +59,9 @@ export default {
             currentRow: null,
             count: 0,
             currentPage: 1,
+            pageSize:5,
             selectTable: {},
-            index:0,
-            size:20,
             dialogFormVisible: false,
-            count:0,
             question_id:'',
         };
     },
@@ -74,13 +77,15 @@ export default {
         },
         async initData() {
             try {
+                const TestsCnt = await queryTestCnt();
+                this.count = TestsCnt.data;
                 this.getTests();
             } catch (err) {
                 console.log("获取数据失败");
             }
         },
         async getTests() {
-            const Tests = await queryTestList(qs.stringify({index:0, limit:1000}));
+            const Tests = await queryTestList(qs.stringify({index:this.currentPage, limit:this.pageSize}));
             this.tableData = [];
             Tests.data.forEach((item) => {
                 const tableData = {};
@@ -94,27 +99,15 @@ export default {
             console.log(`每页 ${val} 条`);
         },
         handleCurrentChange(val) {
-            // this.index = (val-1)*this.size;
-            this.index = val
-            this.getQuestions();
+            this.currentPage = val;
+            this.getTests();
         },
-        async handleDelete(id) {
-          const res = await deleteTest({test_id:id})
-          if(res.status==200){
-            this.$message({
-                type: "success",
-                message: res.message,
-            });
-            this.getTests()
-           }else {
-                    this.$message({
-                        type: "error",
-                        message: res.message,
-                    });
-            }
+        handleDelete(index) {
+            this.tableData.splice(index, 1);
         },
-        handleEdit(test_id) {
-            this.$router.push({name:'testEdit', params:{id:test_id}});
+        handleEdit(index, row) {
+            this.dialogFormVisible = true;
+            this.selectTable = row;
         },
     },
 };

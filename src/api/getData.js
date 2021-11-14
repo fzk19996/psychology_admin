@@ -199,6 +199,8 @@ export const updateTest = data => fetch('/test/updateTest', data, 'POST');
 
 export const addQuestion = data => fetch('/test/addQuestion', data, 'POST');
 
+export const queryTestCnt = data => fetch('/psychology/testCnt', data, 'POST', 'not_fetch')
+
 export const queryTestList = data => fetch('/psychology/test', data, 'POST', 'not_fetch')
 
 export const queryQuestionList = data => fetch('/test/queryQuestionList', data, 'POST', 'not_fetch')

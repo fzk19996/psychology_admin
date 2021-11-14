@@ -79,7 +79,7 @@
 
 <script>
 import headTop from "../components/headTop";
-import { getAnswerList, queryTestList} from "@/api/getData";
+import { queryTestCnt, queryTestList} from "@/api/getData";
 import qs from 'qs';
 import axios from 'axios';
 
@@ -88,11 +88,12 @@ export default {
         return {
             tableData: [],
             currentRow: null,
-            count: 0,
+            count: 10,
             currentPage: 1,
             selectTable: {},
-            pageSize:20,
+            pageSize:5,
             dialogFormVisible: false,
+            offset: 0, 
         };
     },
     components: {
@@ -103,7 +104,6 @@ export default {
     },
     methods: {
         downloadAnswer(test_id){
-            console.log(test_id)
             axios({
                 method: 'post',
                 url: '/test/downloadAllAnswer',
@@ -120,10 +120,6 @@ export default {
                 let blob = new Blob([res.data],{type: 'application/vnd.ms-excel'});
                 link.style.display = 'none'
                 link.href = URL.createObjectURL(blob);
-                let num = ''
-                for(let i=0;i < 10;i++){
-                    num += Math.ceil(Math.random() * 10)
-                }
                 link.setAttribute('download', '答案.xls')
                 document.body.appendChild(link)
                 link.click()
@@ -139,13 +135,15 @@ export default {
 
         async initData() {
             try {
+                const TestsCnt = await queryTestCnt();
+                this.count = TestsCnt.data;
                 this.getAnswers();
             } catch (err) {
                 console.log("获取数据失败");
             }
         },
         async getAnswers() {
-            const Tests = await queryTestList(qs.stringify({index:0, limit:3}));
+            const Tests = await queryTestList(qs.stringify({index:this.currentPage, limit:this.pageSize}));
             this.tableData = [];
             Tests.data.forEach((item) => {
                 const tableData = {};
@@ -164,7 +162,6 @@ export default {
                         type: "success",
                         message: res.message,
                     });
-                    this.getUsers();
                 } else {
                     this.$message({
                         type: "error",
@@ -180,8 +177,8 @@ export default {
         },
         handleCurrentChange(val) {
             this.currentPage = val;
-            this.offset = (val - 1) * this.limit;
-            this.getUsers();
+            this.offset = (val - 1) * this.pageSize;
+            this.getAnswers();
         },
         handleDelete(index) {
             this.tableData.splice(index, 1);
