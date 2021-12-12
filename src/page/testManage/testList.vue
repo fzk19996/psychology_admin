@@ -49,7 +49,7 @@
 
 <script>
 import headTop from "../../components/headTop";
-import {queryTestList, queryTestCnt} from "@/api/getData";
+import {queryTestList, queryTestCnt, deleteTest} from "@/api/getData";
 import qs from 'qs';
 
 export default {
@@ -96,18 +96,29 @@ export default {
 
         },
         handleSizeChange(val) {
-            console.log(`每页 ${val} 条`);
+            // console.log(`每页 ${val} 条`);
         },
         handleCurrentChange(val) {
             this.currentPage = val;
             this.getTests();
         },
-        handleDelete(index) {
-            this.tableData.splice(index, 1);
+        async handleDelete(test_id) {
+          const res = await deleteTest({test_id:test_id})
+          if(res.status==200){
+            this.$message({
+                type: "success",
+                message: "删除测试成功",
+            });
+            this.getTests()
+           }else {
+                    this.$message({
+                        type: "error",
+                        message: "删除测试失败",
+                    });
+            }
         },
-        handleEdit(index, row) {
-            this.dialogFormVisible = true;
-            this.selectTable = row;
+        handleEdit(test_id) {
+            this.$router.push({name:'testEdit', params:{id:test_id}});
         },
     },
 };
